@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    
   end
 
   def create
@@ -8,7 +9,7 @@ class SessionsController < ApplicationController
       #ユーザーログイン後にユーザー情報のページにリダイレクト
       log_in @user
       params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
-      redirect_to @user
+      redirect_back_or @user
     else
       #エラーメッセージの作成
       flash.now[:danger] = 'メールアドレスまたはパスワードが間違っています'
