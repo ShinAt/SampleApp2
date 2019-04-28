@@ -15,6 +15,7 @@ gem 'rails-i18n'
 gem 'faker',         '1.9.3'
 gem 'will_paginate', '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'mail-iso-2022-jp', '2.0.8'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

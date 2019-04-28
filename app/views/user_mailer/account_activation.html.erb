@@ -1,0 +1,7 @@
+<h1>Twwwitter</h1>
+
+<p>こんにちは <%= @user.name %>さん！</p>
+
+<p>ようこそTwwwitterへ！以下のリンクをクリックしてアカウントの有効化を行ってください。</p>
+
+<%= link_to "アカウントの有効化", edit_account_activation_url(@user.activation_token, email: @user.email) %>
