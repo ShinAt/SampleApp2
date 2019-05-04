@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         #エラーメッセージの作成
         message = "アカウントは有効化されていません。"
         message += "送信したメールの有効化リンクをクリックしてください。"
-        flash.now[:warning] = message
+        flash[:warning] = message
         redirect_to root_url
       end
     else
