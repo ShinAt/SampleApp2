@@ -13,6 +13,8 @@ gem 'jbuilder',     '2.7.0'
 gem 'bcrypt',       '3.1.12'
 gem 'rails-i18n'
 gem 'faker',         '1.9.3'
+gem 'carrierwave',   '1.2.2'
+gem 'mini_magick',   '4.7.0'
 gem 'will_paginate', '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'mail-iso-2022-jp', '2.0.8'
@@ -39,6 +41,7 @@ end
 
 group :production do
   gem 'pg', '1.1.4'
+  gem 'fog', '1.42'
 end
 
 # Windows環境ではtzinfo-dataというgemを含める必要があります
