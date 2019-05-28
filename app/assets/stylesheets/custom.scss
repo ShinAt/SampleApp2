@@ -13,9 +13,16 @@ $gray-medium-light: #eaeaea;
 
 /*universal*/
 
+html {
+  height: 100%;
+}
+
 body {
-  padding-top: 60px;
+  padding-top: 50px;
   font-family: "BIZ UDPGothic", sans-serif;
+  height: 100%;
+  
+  
 }
 
 section {
@@ -62,6 +69,22 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+/*background image*/
+
+.bg-image {
+  background-image: image-url("beach-4161593_1920.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.bg-mask {
+  background: rgba(255, 255, 255, 0.5);
+  min-height: 100vh;
 }
 
 /*header*/
@@ -118,6 +141,11 @@ footer {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+/*not_login top_page*/
+.jumbotron {
+  margin-top: 20px;
 }
 
 
