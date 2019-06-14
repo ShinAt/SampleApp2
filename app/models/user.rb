@@ -91,9 +91,14 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+  #ユーザー検索
   def self.search_user(search)
     if search.present?
-      where(['name LIKE ?', "%#{search}%"])
+      if Rails.env.production?
+        where(['name iLIKE ?', "%#{search}%"])
+      else
+        where(['name LIKE ?', "%#{search}%"])
+      end
     else
       all
     end
