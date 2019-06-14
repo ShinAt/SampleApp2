@@ -27,6 +27,32 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
   test "index as non-admin" do
     log_in_as(@non_admin)
     get users_path
-    assert_select 'a', text: 'delete', count: 0
+    assert_select 'a', text: '削除', count: 0
   end
+
+  test "search user" do
+    log_in_as(@admin)
+    get users_path
+    get users_path, params: {search: "archer"}
+    first_page_of_users = User.paginate(page: 1).search_user("archer")
+    first_page_of_users.each do |user|
+      assert_select 'a[href=?]', user_path(user), count: 2
+    end
+
+    #検索ヒットが0件の時
+    get users_path
+    first_page_of_users = User.paginate(page: 1).search_user("aaaarewweraaaa")
+    assert first_page_of_users.count == 0
+  end
+
+  test "search user empty word" do
+    log_in_as(@admin)
+    get users_path
+    get users_path, params: {search: ""}
+    first_page_of_users = User.paginate(page: 1).search_user("")
+    first_page_of_users.each do |user|
+      assert_select 'a[href=?]', user_path(user), text: user.name
+    end
+  end
+
 end

@@ -1,0 +1,7 @@
+<p>ユーザー検索</p>
+<div class="search_field">
+  <%= form_tag users_path, :method => :get do %>
+    <%= text_field_tag :search, params[:search] , placeholder: "ユーザー名を入力", class: "form-control search_form" %>
+    <%= submit_tag "検索",  :name => nil, class: "btn-primary search_button" %>
+  <% end %>
+</div>
