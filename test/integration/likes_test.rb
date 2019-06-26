@@ -29,9 +29,4 @@ class LikesTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "should not like a my micropost with me" do
-    assert_no_difference "@my_micropost.likes.count" do
-      post likes_path, params: {user_id: @user.id, micropost_id: @my_micropost.id}
-    end
-  end
 end
