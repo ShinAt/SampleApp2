@@ -18,6 +18,8 @@ gem 'mini_magick',   '4.7.0'
 gem 'will_paginate', '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'mail-iso-2022-jp', '2.0.8'
+gem 'counter_culture', '~> 1.8'
+gem 'after_commit_action', '1.1.0'
 
 
 group :development, :test do
